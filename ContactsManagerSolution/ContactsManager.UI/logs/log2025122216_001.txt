@@ -1,0 +1,65 @@
+2025-12-22 16:17:01.943 -05:00 [INF] User profile is available. Using 'C:\Users\talha\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-22 16:17:02.662 -05:00 [INF] Now listening on: https://localhost:7185
+2025-12-22 16:17:02.667 -05:00 [INF] Now listening on: http://localhost:5243
+2025-12-22 16:17:03.982 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/ - null null
+2025-12-22 16:17:04.340 -05:00 [INF] Executing endpoint 'CRUDExample.Controllers.PersonsController.Index (ContactsManager.UI)'
+2025-12-22 16:17:04.577 -05:00 [INF] Route matched with {action = "Index", controller = "Persons"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.String, System.String, ServiceContracts.Enums.SortOrderOptions) on controller CRUDExample.Controllers.PersonsController (ContactsManager.UI).
+2025-12-22 16:17:05.284 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-12-22 16:17:10.916 -05:00 [INF] Executed DbCommand (252ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [p].[TaxIdentificationNumber], [c].[CountryID], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryID]
+2025-12-22 16:17:11.320 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-12-22 16:17:11.365 -05:00 [INF] Executing ViewResult, running view Index.
+2025-12-22 16:17:12.075 -05:00 [INF] Executed ViewResult - view Index executed in 724.3756ms.
+2025-12-22 16:17:12.090 -05:00 [INF] Executed action CRUDExample.Controllers.PersonsController.Index (ContactsManager.UI) in 7489.0504ms
+2025-12-22 16:17:12.099 -05:00 [INF] Executed endpoint 'CRUDExample.Controllers.PersonsController.Index (ContactsManager.UI)'
+2025-12-22 16:17:12.118 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-22 16:17:12.135 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_vs/browserLink - null null
+2025-12-22 16:17:12.146 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/ - 200 null text/html; charset=utf-8 8195.6564ms
+2025-12-22 16:17:12.148 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 30.0791ms
+2025-12-22 16:17:12.255 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_vs/browserLink - 200 null text/javascript; charset=UTF-8 120.8695ms
+2025-12-22 16:17:21.002 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/Account/Register - null null
+2025-12-22 16:17:21.034 -05:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2025-12-22 16:17:21.045 -05:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2025-12-22 16:17:21.056 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-12-22 16:17:21.063 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-12-22 16:17:21.072 -05:00 [INF] Executing ViewResult, running view Register.
+2025-12-22 16:17:21.249 -05:00 [INF] Executed ViewResult - view Register executed in 180.4893ms.
+2025-12-22 16:17:21.255 -05:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) in 200.664ms
+2025-12-22 16:17:21.260 -05:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2025-12-22 16:17:21.265 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/Account/Register - 200 null text/html; charset=utf-8 263.7362ms
+2025-12-22 16:17:21.361 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-22 16:17:21.362 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_vs/browserLink - null null
+2025-12-22 16:17:21.373 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 12.7048ms
+2025-12-22 16:17:21.428 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_vs/browserLink - 200 null text/javascript; charset=UTF-8 66.0025ms
+2025-12-22 16:17:21.591 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/jquery.validate.unobtrusive.min.js - null null
+2025-12-22 16:17:22.073 -05:00 [INF] Sending file. Request path: '/jquery.validate.unobtrusive.min.js'. Physical path: 'C:\Users\talha\source\repos\ContactsManagerSolution\ContactsManagerSolution\ContactsManager.UI\wwwroot\jquery.validate.unobtrusive.min.js'
+2025-12-22 16:17:22.079 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/jquery.validate.unobtrusive.min.js - 200 5871 text/javascript 488.4312ms
+2025-12-22 16:17:51.541 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7185/Account/Register - application/x-www-form-urlencoded 299
+2025-12-22 16:17:51.569 -05:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2025-12-22 16:17:51.582 -05:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ContactsManager.Core.DTO.RegisterDTO) on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2025-12-22 16:17:51.646 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-12-22 16:17:51.654 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-12-22 16:17:51.661 -05:00 [INF] Executing RedirectResult, redirecting to /persons/Index.
+2025-12-22 16:17:51.669 -05:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) in 79.4046ms
+2025-12-22 16:17:51.676 -05:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2025-12-22 16:17:51.683 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7185/Account/Register - 302 0 null 142.5894ms
+2025-12-22 16:17:51.700 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/persons/Index - null null
+2025-12-22 16:17:51.730 -05:00 [INF] Executing endpoint 'CRUDExample.Controllers.PersonsController.Index (ContactsManager.UI)'
+2025-12-22 16:17:51.742 -05:00 [INF] Route matched with {action = "Index", controller = "Persons"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.String, System.String, ServiceContracts.Enums.SortOrderOptions) on controller CRUDExample.Controllers.PersonsController (ContactsManager.UI).
+2025-12-22 16:17:51.752 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-12-22 16:17:51.821 -05:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [p].[TaxIdentificationNumber], [c].[CountryID], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryID]
+2025-12-22 16:17:51.836 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-12-22 16:17:51.840 -05:00 [INF] Executing ViewResult, running view Index.
+2025-12-22 16:17:51.860 -05:00 [INF] Executed ViewResult - view Index executed in 19.8102ms.
+2025-12-22 16:17:51.865 -05:00 [INF] Executed action CRUDExample.Controllers.PersonsController.Index (ContactsManager.UI) in 116.2969ms
+2025-12-22 16:17:51.992 -05:00 [INF] Executed endpoint 'CRUDExample.Controllers.PersonsController.Index (ContactsManager.UI)'
+2025-12-22 16:17:52.000 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_vs/browserLink - null null
+2025-12-22 16:17:52.000 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/persons/Index - 200 null text/html; charset=utf-8 301.1122ms
+2025-12-22 16:17:52.001 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-22 16:17:52.083 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 82.6447ms
+2025-12-22 16:17:52.084 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_vs/browserLink - 200 null text/javascript; charset=UTF-8 84.1439ms
