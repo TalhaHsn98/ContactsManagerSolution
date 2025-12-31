@@ -1,20 +1,25 @@
 ﻿using ContactsManager.Core.Domain.IdentityEntities;
 using ContactsManager.Core.DTO;
 using CRUDExample.Controllers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContactsManager.UI.Controllers
 {
     [Route("[controller]/[action]")]
+    [AllowAnonymous]
+
     public class AccountController : Controller
     {
 
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountController(UserManager<ApplicationUser> userManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager )
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
         [HttpGet]
         public IActionResult Register()
@@ -51,6 +56,41 @@ namespace ContactsManager.UI.Controllers
             }
 
         }
+
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginDTO loginDTO)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Errors = ModelState.Values.SelectMany(temp => temp.Errors).Select(temp => temp.ErrorMessage);
+                return View(loginDTO);
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(loginDTO.Email, loginDTO.Password, isPersistent: false, lockoutOnFailure: false);
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction(nameof(PersonsController.Index), "Persons");
+            }
+
+            ModelState.AddModelError("Login", "Inalid email or password");
+            return View(loginDTO);
+        }
+
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction(nameof(PersonsController.Index), "Persons");
+        }
     }
 }
-}
+

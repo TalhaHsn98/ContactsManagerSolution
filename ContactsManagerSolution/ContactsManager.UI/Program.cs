@@ -2,6 +2,7 @@ using ContactsManager.Core.Domain.IdentityEntities;
 using CRUDExample.Filters.ActionFilters;
 using CRUDExample.Middleware;
 using Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -30,7 +31,24 @@ builder.Services.AddControllersWithViews(options => {
 builder.Services.AddTransient<PersonsListActionFilter>();
 
 
-builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
+builder.Services.AddAuthorization(options =>
+{
+    options.FallbackPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build(); //enforces authoriation policy (user must be authenticated) for all the action methods
+});
+
+builder.Services.ConfigureApplicationCookie(options => {
+    options.LoginPath = "/Account/Login";
+});
+
+
+builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options => {
+    options.Password.RequiredLength = 5;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireDigit = false;
+    options.Password.RequiredUniqueChars = 3; //Eg: AB12AB
+})
     .AddEntityFrameworkStores<ApplicationDbContext>()
 
     .AddDefaultTokenProviders()
@@ -77,6 +95,8 @@ if (builder.Environment.IsEnvironment("Test") == false)
     Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa");
 app.UseStaticFiles();
 app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
 
