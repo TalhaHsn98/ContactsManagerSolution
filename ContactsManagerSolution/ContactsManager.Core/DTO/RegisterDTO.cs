@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ContactsManager.Core.Enums;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -34,5 +35,7 @@ namespace ContactsManager.Core.DTO
         [Required(ErrorMessage = "Confirm Password can't be blank")]
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
+
+        public UserTypeOptions UserType{ get; set; } = UserTypeOptions.User;
     }
 }
