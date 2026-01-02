@@ -1,0 +1,4 @@
+2026-01-02 16:13:04.195 -05:00 [FTL] it is not critical
+2026-01-02 16:13:05.182 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-02 16:13:05.187 -05:00 [INF] Hosting environment: Development
+2026-01-02 16:13:05.190 -05:00 [INF] Content root path: C:\Users\talha\source\repos\ContactsManagerSolution\ContactsManagerSolution\ContactsManager.UI

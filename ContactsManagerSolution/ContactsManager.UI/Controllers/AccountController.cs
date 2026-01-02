@@ -61,6 +61,8 @@ namespace ContactsManager.UI.Controllers
                 }
                 else
                 {
+                    ApplicationRole applicationRole = new ApplicationRole() { Name = UserTypeOptions.User.ToString() };
+                    await _roleManager.CreateAsync(applicationRole);
                     //Add the new user into 'User' role
                     await _userManager.AddToRoleAsync(user, UserTypeOptions.User.ToString());
                 }
@@ -102,6 +104,18 @@ namespace ContactsManager.UI.Controllers
 
             if (result.Succeeded)
             {
+                //
+                ApplicationUser user = await _userManager.FindByEmailAsync(loginDTO.Email);
+                if (user != null) 
+                { 
+                    
+                    if(await _userManager.IsInRoleAsync(user, UserTypeOptions.Admin.ToString()))
+                    {
+                        return RedirectToAction("Index", "Home", new { area = "Admin" });
+                    }
+                
+                }
+
                 return RedirectToAction(nameof(PersonsController.Index), "Persons");
             }
 

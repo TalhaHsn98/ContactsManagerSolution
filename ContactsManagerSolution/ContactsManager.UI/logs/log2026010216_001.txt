@@ -1,0 +1,77 @@
+2026-01-02 16:13:04.686 -05:00 [INF] User profile is available. Using 'C:\Users\talha\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-02 16:13:05.057 -05:00 [INF] Now listening on: https://localhost:7185
+2026-01-02 16:13:05.064 -05:00 [INF] Now listening on: http://localhost:5243
+2026-01-02 16:13:05.844 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/ - null null
+2026-01-02 16:13:08.534 -05:00 [INF] Executed DbCommand (84ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__get_Item_0
+2026-01-02 16:13:08.741 -05:00 [INF] Executed DbCommand (14ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-01-02 16:13:08.783 -05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-01-02 16:13:08.811 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-01-02 16:13:08.888 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__role_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-01-02 16:13:08.925 -05:00 [INF] Executing endpoint 'CRUDExample.Controllers.PersonsController.Index (ContactsManager.UI)'
+2026-01-02 16:13:08.975 -05:00 [INF] Route matched with {action = "Index", controller = "Persons", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.String, System.String, ServiceContracts.Enums.SortOrderOptions) on controller CRUDExample.Controllers.PersonsController (ContactsManager.UI).
+2026-01-02 16:13:09.022 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:13:09.216 -05:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [p].[TaxIdentificationNumber], [c].[CountryID], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryID]
+2026-01-02 16:13:09.337 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:13:09.387 -05:00 [INF] Executing ViewResult, running view Index.
+2026-01-02 16:13:09.690 -05:00 [INF] Executed ViewResult - view Index executed in 306.1133ms.
+2026-01-02 16:13:09.704 -05:00 [INF] Executed action CRUDExample.Controllers.PersonsController.Index (ContactsManager.UI) in 721.1074ms
+2026-01-02 16:13:09.712 -05:00 [INF] Executed endpoint 'CRUDExample.Controllers.PersonsController.Index (ContactsManager.UI)'
+2026-01-02 16:13:09.735 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-02 16:13:09.736 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_vs/browserLink - null null
+2026-01-02 16:13:09.740 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/ - 200 null text/html; charset=utf-8 3913.194ms
+2026-01-02 16:13:09.766 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 31.3278ms
+2026-01-02 16:13:09.880 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_vs/browserLink - 200 null text/javascript; charset=UTF-8 144.3766ms
+2026-01-02 16:13:22.429 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/Account/Logout - null null
+2026-01-02 16:13:22.458 -05:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Logout (ContactsManager.UI)'
+2026-01-02 16:13:22.467 -05:00 [INF] Route matched with {action = "Logout", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-01-02 16:13:22.473 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:13:22.486 -05:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2026-01-02 16:13:22.492 -05:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-01-02 16:13:22.495 -05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2026-01-02 16:13:22.498 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:13:22.503 -05:00 [INF] Executing RedirectResult, redirecting to /persons/Index.
+2026-01-02 16:13:22.506 -05:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Logout (ContactsManager.UI) in 33.3838ms
+2026-01-02 16:13:22.510 -05:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Logout (ContactsManager.UI)'
+2026-01-02 16:13:22.512 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/Account/Logout - 302 0 null 83.2621ms
+2026-01-02 16:13:22.521 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/persons/Index - null null
+2026-01-02 16:13:22.545 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-01-02 16:13:22.563 -05:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-01-02 16:13:22.570 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/persons/Index - 302 0 null 48.2748ms
+2026-01-02 16:13:22.579 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/Account/Login?ReturnUrl=%2Fpersons%2FIndex - null null
+2026-01-02 16:13:22.599 -05:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-01-02 16:13:22.608 -05:00 [INF] Route matched with {action = "Login", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-01-02 16:13:22.619 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:13:22.623 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:13:22.628 -05:00 [INF] Executing ViewResult, running view Login.
+2026-01-02 16:13:22.700 -05:00 [INF] Executed ViewResult - view Login executed in 73.1807ms.
+2026-01-02 16:13:22.706 -05:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) in 89.9964ms
+2026-01-02 16:13:22.710 -05:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-01-02 16:13:22.715 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/Account/Login?ReturnUrl=%2Fpersons%2FIndex - 200 null text/html; charset=utf-8 136.0614ms
+2026-01-02 16:13:22.792 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-02 16:13:22.792 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_vs/browserLink - null null
+2026-01-02 16:13:22.804 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 13.1403ms
+2026-01-02 16:13:22.832 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.4596ms
+2026-01-02 16:14:49.024 -05:00 [FTL] it is not critical
+2026-01-02 16:14:49.907 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-02 16:14:49.910 -05:00 [INF] Hosting environment: Development
+2026-01-02 16:14:49.912 -05:00 [INF] Content root path: C:\Users\talha\source\repos\ContactsManagerSolution\ContactsManagerSolution\ContactsManager.UI

@@ -1,0 +1,133 @@
+2026-01-02 16:20:31.141 -05:00 [INF] User profile is available. Using 'C:\Users\talha\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-02 16:20:31.486 -05:00 [INF] Now listening on: https://localhost:7185
+2026-01-02 16:20:31.494 -05:00 [INF] Now listening on: http://localhost:5243
+2026-01-02 16:20:32.608 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/ - null null
+2026-01-02 16:20:33.071 -05:00 [INF] Executing endpoint 'CRUDExample.Controllers.PersonsController.Index (ContactsManager.UI)'
+2026-01-02 16:20:33.133 -05:00 [INF] Route matched with {action = "Index", controller = "Persons", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.String, System.String, ServiceContracts.Enums.SortOrderOptions) on controller CRUDExample.Controllers.PersonsController (ContactsManager.UI).
+2026-01-02 16:20:33.161 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:20:36.932 -05:00 [INF] Executed DbCommand (117ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [p].[TaxIdentificationNumber], [c].[CountryID], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryID]
+2026-01-02 16:20:37.236 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:20:37.256 -05:00 [INF] Executing ViewResult, running view Index.
+2026-01-02 16:20:37.723 -05:00 [INF] Executed ViewResult - view Index executed in 468.2517ms.
+2026-01-02 16:20:37.740 -05:00 [INF] Executed action CRUDExample.Controllers.PersonsController.Index (ContactsManager.UI) in 4598.0794ms
+2026-01-02 16:20:37.746 -05:00 [INF] Executed endpoint 'CRUDExample.Controllers.PersonsController.Index (ContactsManager.UI)'
+2026-01-02 16:20:37.775 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/ - 200 null text/html; charset=utf-8 5186.5323ms
+2026-01-02 16:20:37.782 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-02 16:20:37.782 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_vs/browserLink - null null
+2026-01-02 16:20:37.797 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 14.0671ms
+2026-01-02 16:20:37.885 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_vs/browserLink - 200 null text/javascript; charset=UTF-8 103.0926ms
+2026-01-02 16:20:44.666 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/Account/Logout - null null
+2026-01-02 16:20:44.691 -05:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Logout (ContactsManager.UI)'
+2026-01-02 16:20:44.702 -05:00 [INF] Route matched with {action = "Logout", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-01-02 16:20:44.709 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:20:44.720 -05:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2026-01-02 16:20:44.723 -05:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-01-02 16:20:44.726 -05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2026-01-02 16:20:44.728 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:20:44.731 -05:00 [INF] Executing RedirectResult, redirecting to /persons/Index.
+2026-01-02 16:20:44.733 -05:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Logout (ContactsManager.UI) in 24.7573ms
+2026-01-02 16:20:44.735 -05:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Logout (ContactsManager.UI)'
+2026-01-02 16:20:44.737 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/Account/Logout - 302 0 null 72.1405ms
+2026-01-02 16:20:44.746 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/persons/Index - null null
+2026-01-02 16:20:44.755 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-01-02 16:20:44.764 -05:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-01-02 16:20:44.767 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/persons/Index - 302 0 null 20.9219ms
+2026-01-02 16:20:44.785 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/Account/Login?ReturnUrl=%2Fpersons%2FIndex - null null
+2026-01-02 16:20:44.800 -05:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-01-02 16:20:44.811 -05:00 [INF] Route matched with {action = "Login", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-01-02 16:20:44.822 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:20:44.828 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:20:44.832 -05:00 [INF] Executing ViewResult, running view Login.
+2026-01-02 16:20:44.895 -05:00 [INF] Executed ViewResult - view Login executed in 64.0322ms.
+2026-01-02 16:20:44.901 -05:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) in 81.3307ms
+2026-01-02 16:20:44.904 -05:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-01-02 16:20:44.909 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/Account/Login?ReturnUrl=%2Fpersons%2FIndex - 200 null text/html; charset=utf-8 124.672ms
+2026-01-02 16:20:44.991 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-02 16:20:44.992 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_vs/browserLink - null null
+2026-01-02 16:20:45.002 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 11.8589ms
+2026-01-02 16:20:45.048 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_vs/browserLink - 200 null text/javascript; charset=UTF-8 57.6214ms
+2026-01-02 16:20:46.961 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/Account/Register - null null
+2026-01-02 16:20:46.970 -05:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2026-01-02 16:20:46.975 -05:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-01-02 16:20:47.014 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:20:47.017 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:20:47.022 -05:00 [INF] Executing ViewResult, running view Register.
+2026-01-02 16:20:47.118 -05:00 [INF] Executed ViewResult - view Register executed in 97.4631ms.
+2026-01-02 16:20:47.123 -05:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) in 142.2638ms
+2026-01-02 16:20:47.127 -05:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2026-01-02 16:20:47.130 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/Account/Register - 200 null text/html; charset=utf-8 169.1132ms
+2026-01-02 16:20:47.190 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_vs/browserLink - null null
+2026-01-02 16:20:47.191 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-02 16:20:47.215 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 23.7762ms
+2026-01-02 16:20:47.223 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.2444ms
+2026-01-02 16:20:53.585 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/Account/IsEmailAlreadyRegistered?Email=talha%40example.com - null null
+2026-01-02 16:20:53.591 -05:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.IsEmailAlreadyRegistered (ContactsManager.UI)'
+2026-01-02 16:20:53.599 -05:00 [INF] Route matched with {action = "IsEmailAlreadyRegistered", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] IsEmailAlreadyRegistered(System.String) on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-01-02 16:20:53.613 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:20:53.794 -05:00 [INF] Executed DbCommand (81ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-01-02 16:20:53.800 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:20:53.802 -05:00 [INF] Executing JsonResult, writing value of type 'System.Boolean'.
+2026-01-02 16:20:53.807 -05:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.IsEmailAlreadyRegistered (ContactsManager.UI) in 203.7132ms
+2026-01-02 16:20:53.810 -05:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.IsEmailAlreadyRegistered (ContactsManager.UI)'
+2026-01-02 16:20:53.814 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/Account/IsEmailAlreadyRegistered?Email=talha%40example.com - 200 null application/json; charset=utf-8 229.3217ms
+2026-01-02 16:21:04.888 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7185/Account/Register - application/x-www-form-urlencoded 299
+2026-01-02 16:21:04.900 -05:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2026-01-02 16:21:04.915 -05:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(ContactsManager.Core.DTO.RegisterDTO) on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-01-02 16:21:04.953 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:21:05.240 -05:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-02 16:21:05.482 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PersonName], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2026-01-02 16:21:05.534 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-01-02 16:21:05.549 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-01-02 16:21:05.660 -05:00 [INF] Before logic - ResponseHeaderActionFilter
+2026-01-02 16:21:05.664 -05:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) in 742.7831ms
+2026-01-02 16:21:05.668 -05:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2026-01-02 16:21:05.678 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Role USER does not exist.
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.AddToRoleAsync(TUser user, String normalizedRoleName, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+   at ContactsManager.UI.Controllers.AccountController.Register(RegisterDTO registerDTO) in C:\Users\talha\source\repos\ContactsManagerSolution\ContactsManagerSolution\ContactsManager.UI\Controllers\AccountController.cs:line 65
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-01-02 16:21:05.811 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7185/Account/Register - 500 null text/html; charset=utf-8 922.4185ms
+2026-01-02 16:21:05.870 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_vs/browserLink - null null
+2026-01-02 16:21:05.881 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-02 16:21:05.895 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 13.3421ms
+2026-01-02 16:21:05.900 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7185/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.5404ms
+2026-01-02 16:23:40.704 -05:00 [FTL] it is not critical
+2026-01-02 16:23:41.562 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-02 16:23:41.565 -05:00 [INF] Hosting environment: Development
+2026-01-02 16:23:41.567 -05:00 [INF] Content root path: C:\Users\talha\source\repos\ContactsManagerSolution\ContactsManagerSolution\ContactsManager.UI
